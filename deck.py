@@ -9,8 +9,7 @@ shuffling, splitting the deck, and dealing the cards.
 Relies on the Card class for suits and ranks.
 """
 
-# user_name = input("What is your name? \n")  # global variable to store user's name
-user_name = "Test"  # temporary user_name variable being left for testing purposes
+user_name = input("What is your name? \n")  # global variable to store user's name
 
 
 class Deck:
@@ -24,40 +23,23 @@ class Deck:
 
     def split_deck(self):
         split_deck = (self.whole_deck[:26], self.whole_deck[26:])  # splits the deck in half at the middle index
-        # print(split_deck)
         return split_deck
 
     def deal_cards(self, first_half, second_half):
         print("Dealing cards...")
-        user = Players(user_name, first_half)
-        cpu = Players("CPU", second_half)
+        user = Players(user_name, first_half)  # user is given the first half of 52
+        cpu = Players("CPU", second_half)  # cpu is given the second half of 52
         print("Cards have been dealt!")
-        # print(user.__dict__)
-        # print(cpu.__dict__)
         return user, cpu
 
+    # prepares deck to be played by shuffling, splitting, and dealing the deck to two players
     def prepare_deck(self):
         deck = Deck()
         deck.shuffle_deck()
         first_half, second_half = deck.split_deck()
+        print("Press enter to deal the cards.")
+        input()
         user_hand, cpu_hand = deck.deal_cards(first_half, second_half)
+        print("Press enter to start playing.")
+        input()
         return user_hand, cpu_hand
-
-        # return getattr(player_hands[0], "hand"), getattr(player_hands[1], "hand")
-        # print(player_hands)
-        # return player_hands
-
-# d = Deck()
-# d.prepare_deck()
-# # print(d.whole_deck)
-# d.shuffle_deck()
-# half1, half2 = d.split_deck()
-# result = d.deal_cards(half1, half2)
-# print(result)
-# print(result[0])
-# print(getattr(result[0], "hand")[0])  # get hand from user
-# # print(half1)
-# print(half2)
-# d.deal_cards(half1, half2)
-# print(d.prepare_game())
-# print(getattr())
