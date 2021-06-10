@@ -6,7 +6,7 @@
 
 class Cards:
     SUIT = 'H S D C'.split()  # Heart, Spade, Diamond, Club
-    RANK = 'A K Q J 10 9 8 7 6 5 4 3 2'.split()  # highest to lowest
+    RANK = '2 3 4 5 6 7 8 9 10 J Q K A'.split()  # lowest to highest
 
     def __init__(self, suit, rank):
         self.suit = suit

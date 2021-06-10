@@ -1,9 +1,11 @@
 from deck import *
 
 """
-Before running the following tests, ensure the global variable
-user_name in deck.py is given a value, rather than user input.
-Uncomment line 7, and comment out line 6 in deck.py for best results.
+In order to run these tests successfully, please use the command line. 
+While within the folder "Intel-War", run the following command in order
+to run the tests: 
+python -m pytest -s test/test_deck.py
+When the tests load, hit the enter key to run the full tests. 
 """
 
 
