@@ -72,3 +72,27 @@ def test_loser_takes_no_cards():
     winnings = [('H', '2'), ('S', '5')]
     play_instance.winner_takes_cards(winnings, cpu.hand)
     assert user.hand == []
+
+
+def test_winner_of_war_takes_cards():
+    play_instance = PlayWar()
+    winnings = []
+    user_cards = [('H', 'J'), ('D', 'A'), ('S', '2'), ('D', 'Q')]
+    cpu_cards = [('S', 'J'), ('S', '10'), ('H', 'A'), ('D', '3')]
+    user = Players(user_name, user_cards)
+    cpu = Players("CPU", cpu_cards)
+    play_instance.go_to_war(winnings, user.hand, cpu.hand)
+    assert len(user.hand) == 8
+
+
+def test_war_can_happen_twice_in_a_row():
+    # length of final hand tells us war occurred twice
+    play_instance = PlayWar()
+    winnings = []
+    user_cards = [('H', 'J'), ('D', 'A'), ('S', '2'), ('D', 'Q'), ('D', '10'), ('H', '2'), ('H', '3'), ('H', '4')]
+    cpu_cards = [('S', 'J'), ('S', '10'), ('H', 'A'), ('S', 'Q'), ('C', '10'), ('C', 'K'), ('C', 'Q'), ('C', 'J')]
+    user = Players(user_name, user_cards)
+    cpu = Players("CPU", cpu_cards)
+    play_instance.go_to_war(winnings, user.hand, cpu.hand)
+    assert len(cpu.hand) == 16
+
