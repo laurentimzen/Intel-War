@@ -1,7 +1,7 @@
 # Intel-War
 This is an implementation of the card game War, as requested for an interview with Intel.
 
-#Assumptions
+# Assumptions
 **This implementation makes assumptions about the conditions for winning a game of War:**
 
 * A user has all 52 cards in their hand 
