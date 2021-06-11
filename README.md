@@ -62,7 +62,7 @@ To run the file `test_play_war.py` please run the following command from the fol
 
 `python -m pytest -s test/test_play_war.py`
 
-For both tests, please hit the enter key after the command is run is bypass the user_name input.
+For both tests, please hit the enter key after the command is run to bypass the user_name input.
 
 # If Given More Time
 
